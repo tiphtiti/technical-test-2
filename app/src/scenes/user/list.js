@@ -32,7 +32,7 @@ const NewList = () => {
         .filter((u) => !filter?.status || u.status === filter?.status)
         .filter((u) => !filter?.contract || u.contract === filter?.contract)
         .filter((u) => !filter?.availability || u.availability === filter?.availability)
-        .filter((u) => !filter?.search || u.name.toLowerCase().includes(filter?.search.toLowerCase())),
+        .filter((u) => !filter?.search || u.name && u.name.toLowerCase().includes(filter?.search.toLowerCase())),
     );
   }, [users, filter]);
 
@@ -128,7 +128,7 @@ const Create = () => {
                     <div className="flex justify-between flex-wrap">
                       <div className="w-full md:w-[48%] mt-2">
                         <div className="text-[14px] text-[#212325] font-medium	">Name</div>
-                        <input className="projectsInput text-[14px] font-normal text-[#212325] rounded-[10px]" name="username" value={values.username} onChange={handleChange} />
+                        <input className="projectsInput text-[14px] font-normal text-[#212325] rounded-[10px]" name="name" value={values.name} onChange={handleChange} />
                       </div>
                       <div className="w-full md:w-[48%] mt-2">
                         <div className="text-[14px] text-[#212325] font-medium	">Email</div>

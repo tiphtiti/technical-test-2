@@ -73,7 +73,7 @@ export default () => {
                 <p className="text-[12px] text-[#FD3131]">{errors.password}</p>
               </div>
               {/* SignIn Button */}
-              <div className="flex gap-3">
+              <div className="flex flex-col gap-3">
                 <LoadingButton
                   className="font-[Helvetica] w-[220px] bg-[#007bff] hover:bg-[#0069d9] text-[#fff] rounded-[30px] m-auto block text-[16px] p-[8px] min-h-[42px] "
                   loading={isSubmitting}
@@ -81,12 +81,14 @@ export default () => {
                   color="primary">
                   Signin
                 </LoadingButton>
-                <LoadingButton
-                  className="font-[Helvetica] w-[220px] bg-[#009dff] hover:bg-[#0069d9] text-[#fff] rounded-[30px] m-auto block text-[16px] p-[8px] min-h-[42px] "
+                <div className="w-full flex justify-center items-center gap-2">
+                  <p className="font-[Helvetica] italic">Not member of the team yet?</p>
+                  <LoadingButton
+                  className="font-[Helvetica] hover:text-[#007bff] text-black block text-[16px] p-[8px] min-h-[42px] underline"
                   onClick={() => (window.location.href = "/auth/signup")}
                   color="primary">
                   Signup
-                </LoadingButton>
+                </LoadingButton></div>
               </div>
             </form>
           );
